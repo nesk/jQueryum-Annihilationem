@@ -1,7 +1,5 @@
 %section.span7.offset1
   %article.well
-    / :if article.version
-    /   %a.sha-version{ href: "/#{article.version}/#{article.name}" } Static Version
     %h2
       %a{href: "/" + article.name}&= article.title
     = markdownEncode(article.markdown)
@@ -16,51 +14,11 @@
       blog comments powered by
       %span.logo-disqus
         Disqus
-    / :script
-    /   (function() {
-    /     var links = document.getElementsByTagName('a');
-    /     var query = '?';
-    /     for(var i = 0; i < links.length; i++) {
-    /       if(links[i].href.indexOf('#disqus_thread') >= 0) {
-    /         query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&amp;';
-    /       }
-    /     }
-    /     document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/howtonodeorg/get_num_replies.js' + query + '"></' + 'script>');
-    /   })();
-
 
 %section#sidebar.span3
-  / .aside.author
-  /   %h4 About the Author
-  /   %img.headshot{src: gravitar(author.email) }
-  /   %dl
-  /     %dt Name:
-  /     %dd&= author.name
-  /   :if author.github
-  /     %dl
-  /       %dt Github:
-  /       %dd= github(author.github)
-  /   :if author.bitbucket
-  /     %dl
-  /       %dt BitBucket:
-  /       %dd= bitbucket(author.bitbucket)
-  /   :if author.twitter
-  /     %dl
-  /       %dt Twitter:
-  /       %dd= twitter(author.twitter)
-  /   :if author.location
-  /     %dl
-  /       %dt Location:
-  /       %dd&= author.location
-  /   :if author.homepage
-  /     %dl
-  /       %dt Links:
-  /       %dd
-  /         %a{href: author.homepage} Homepage
-
   .well
     %h3
-      À propos de cet article
+      À propos de l'article
     %a.twitter-share-button{href:"https://twitter.com/share"}
       Tweet
     %script
@@ -113,8 +71,10 @@
       %ul.nav.nav-list
         %li.nav-header
           Derniers articles :
-      :each related in article.related
-        %li
-          %a{href: "/" + related.name}&=related.title
-          :if related.node
-            %span.versiontag&= related.node
+        :each related in article.related
+          %li
+            %a{href: "/" + related.name}&=related.title
+
+  .about.well
+    %h3 À propos de ce blog
+    = markdownEncode(description)
