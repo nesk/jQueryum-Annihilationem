@@ -14,8 +14,8 @@ Although It’s my personal blog, you can clone this git repository to use it as
 	    wheat = require('wheat');
 	
 	var app = connect()
-	    .use(connect.logger(':date | :remote-addr | :referrer | HTTP/:http-version | :method | :url | :status | :res[content-length] | :response-time | :user-agent'))
-	    .use(wheat('/home/johann/articles/')) // Change the location of your articles
+	    .use(connect.logger(':date | :remote-addr | :referrer | HTTP/:http-version | :method | :url | :status | :res[content-length] | :response-time | :user-agent')) // You can adapt this to your needs
+	    .use(wheat())
 	.listen(3001, '127.0.0.1'); // Change the port and the interface
 
 After that, you can update and start the server :
@@ -28,7 +28,7 @@ After that, you can update and start the server :
 The personalization is in two steps :
 
 * Modify the `description.markdown` file which provides a description for the blog.
-* Create your own author file and a directory to store your articles (specify its location in the `app.js` file). See [howtonode.org][]’s repository to know formats.
+* Create your own author file. See [howtonode.org][]’s repository to learn the format to use.
 
 [howtonode.org]: https://github.com/creationix/howtonode.org
 [Tim Caswell]: https://github.com/creationix
