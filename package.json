@@ -10,7 +10,7 @@
 	},
 	"scripts": {
 		"start": "node app"
-	}
+	},
 	"dependencies": {
 		"connect": "2.4.x",
 		"wheat": "0.2.x"
