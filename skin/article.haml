@@ -5,7 +5,7 @@
     %h2
       %a{href: "/" + article.name}&= article.title
     = markdownEncode(article.markdown)
-    %hr{style:"clear:both"}
+    %hr
     #disqus_thread.body
     :script
       var disqus_url = "http://blog.jpardanaud.com/#{article.name}";
