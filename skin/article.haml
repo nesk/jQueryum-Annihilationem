@@ -1,4 +1,4 @@
-%section.span7.offset1
+%section.span8
   %article.well
     %h2
       %a{href: "/" + article.name}&= article.title
@@ -15,7 +15,7 @@
       %span.logo-disqus
         Disqus
 
-%section#sidebar.span3
+%section#sidebar.span4
   .well
     %h3
       À propos de l'article
@@ -53,7 +53,7 @@
       %li.nav-header
         Versions de l'article :
       :each version, stat in article.log
-        %li{title: stat.message}
+        %li
           %a{ href: "/#{version}/#{article.name}" }
             &= new Date(stat.date).toUTCString()
 

@@ -1,4 +1,4 @@
-%section#articles.span7.offset1
+%section#articles.span8
   .well
     :each article in articles.slice(0,10)
       %article
@@ -11,7 +11,7 @@
           %a.btn.btn-mini.pull-right{href: "/" + article.name + "#disqus_thread"} Commentaires
       %hr
 
-%section#sidebar.span3
+%section#sidebar.span4
   .about.well
     %h3 À propos de ce blog
     = markdownEncode(description)
