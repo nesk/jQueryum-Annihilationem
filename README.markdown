@@ -1,66 +1,36 @@
-# HowToNode.org
+# jQueryum Annihilationem
 
-This is a community supported blog about how to program in nodejs.
+This is my personal blog, a fork from [howtonode.org][] project (created by [Tim Caswell][]). I made some changes to adapt the project to my use :
 
-This is powered by a new static blog engine written in node called [wheat][].
+* The skin has been entirely remade by myself with [Simplex][], a modification of [Twitter Bootstrap][] stylesheet.
+* The templates have been rewritten to use Bootstrap stylesheet. I’ve also translated them in French and removed some useless informations (like node version on each article).
+* The server has been __very slightly__ recoded. The `server/server.js` file has been replaced by the `app.js` file, using the Connect module, that’s all.
 
-To run a local version of the blog, simply install [wheat][] and it's dependencies, node.JS v0.1.101 or later.
+## Installation
 
-If you have [spark][] installed, just type `spark` in this directory.  If not, append `.listen(3000)` right before the closing semicolon and run it with `node app.js`
+Although It’s my personal blog, you can clone this git repository to use it as your own. Before using it, make sure to edit the `app.js` file to avoid incorrect parameters :
 
-You can get a working wheat environment out of the box with [ivy][].
+	var connect = require('connect'),
+	    wheat = require('wheat');
+	
+	var app = connect()
+	    .use(connect.logger(':date | :remote-addr | :referrer | HTTP/:http-version | :method | :url | :status | :res[content-length] | :response-time | :user-agent'))
+	    .use(wheat('/home/johann/articles/')) // Change the location of your articles
+	.listen(3001, '127.0.0.1'); // Change the port and the interface
 
-[wheat]: http://github.com/creationix/wheat
-[ivy]: http://github.com/creationix/ivy
-[spark]: http://github.com/senchalabs/spark
+After that, you can update and start the server :
 
-## Contributing
+	npm update
+	node app
 
-The best way to contribute is to fork this repository and add your article.  If this is your first article, then please add an entry for yourself in the authors directory as well.
+## Personalization
 
-### Article format
+The personalization is in two steps :
 
-Every article is a markdown file with some meta-data at the top of the file.
+* Modify the `description.markdown` file which provides a description for the blog.
+* Create your own author file and a directory to store your articles (specify its location in the `app.js` file). See [howtonode.org][]’s repository to know formats.
 
-    Title: Control Flow in Node Part II
-    Author: Tim Caswell
-    Date: Thu Feb 04 2010 02:24:35 GMT-0600 (CST)
-    Node: v0.1.91
-
-    I had so much fun writing the last article on control flow, that I decided to...
-
-    ## First section: Display JavaScript files
-
-    * display contents of external JavaScript file (path is relative to .markdown file)
-    <test-code/test-file.js>
-
-    * display contents of external JavaScript file and evaluate its contents
-    <test-code/evaluate-file.js*>
-
-    More content goes here.
-
-### Author format
-
-Every author has a markdown file located in `authors` folder. You should name this file by your name and surname `Name Surname.markdown`.
-
-    Github:   your_github_account
-    Email:    your_email@domain.com
-    Homepage: http://yourhomepage.com
-    Twitter:  your_twitter_account
-    Location: City, State, Country
-
-    A few words about you.
-
-### Starting the project on your local machine
-
-Please check if the project is still working after you add your contribution to it. You can run the project in three easy steps:
-
-1. Install the `npm`packages: `npm install`
-2. Start the server: `node server/server.js`
-3. Enjoy your local blog clone at `http://localhost:8080`
-
-More docs to come soon...
-
-## Licensing
-
-All articles are copyright to the individual authors.  Authors can put notes about license and copyright on their individual bio pages if they wish.
+[howtonode.org]: https://github.com/creationix/howtonode.org
+[Tim Caswell]: https://github.com/creationix
+[Simplex]: http://bootswatch.com/simplex/
+[Twitter Bootstrap]: http://twitter.github.com/bootstrap/

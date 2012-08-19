@@ -1,10 +1,12 @@
-.snippet
-  %a.code-link{ href: snippet.filename}
-    &= snippet.base
-    :if snippet.name
-      %span.hash ##{snippet.name}
+%div.snippet
+  .snippet-link
+    %a{ href: snippet.filename}
+      &= snippet.base
+      :if snippet.name
+        %span ##{snippet.name}
   %pre
-    %code&= snippet.code
+    %code
+      &= snippet.code
   :if snippet.output || snippet.lastExpression !== undefined
     %dl.output
       %dt Output

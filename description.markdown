@@ -1,12 +1,7 @@
-### About HowToNode.org
+Bienvenue sur __jQueryum Annihilationem__. Certains s’en douteront, le titre est une maladroite transcription latine de mon antipathie envers la librairie [jQuery][], mais aussi une manière de présenter le thème principal de ce blog : le JavaScript. Bon, j’avais aussi besoin d’un titre...
 
-HowToNode.org is a community supported blog created by [Tim Caswell][]. The purpose of the blog is to teach how to do various tasks in [node.js][] as well as teach fundamental concepts that are needed to write effective code.
+Bien que le JavaScript soit le thème principal, je n’exclue pas le fait de m’étendre sur d’autres sujets liés à l’informatique. Contrairement à mon blog précédent, je tâcherai d’éviter les articles concernant ma vie personnelle, mes comptes [Twitter][] et [Facebook][] étant largement plus adaptés à cela.
 
-This site is powered by [Wheat][], a git based blogging engine written in [node.JS][].
-
-The content for this site is stored in a [git repository][] that anyone can fork, write an article, and send a pull request. If your article passes the quality standards it will be published and help support the greater node community.
-
-[Tim Caswell]: http://creationix.com/
-[node.js]: http://nodejs.org/
-[Wheat]: http://github.com/creationix/wheat
-[git repository]: http://github.com/creationix/howtonode.org
+[jquery]: http://jquery.com/
+[twitter]: https://twitter.com/Nesquik69
+[facebook]: https://www.facebook.com/pardanaud.j

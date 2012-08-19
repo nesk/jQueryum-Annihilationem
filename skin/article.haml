@@ -1,8 +1,8 @@
-#main
-  .article
-    :if article.version
-      %a.sha-version{ href: "/#{article.version}/#{article.name}" } Static Version
-    %h1
+%section.span7.offset1
+  %article.well
+    / :if article.version
+    /   %a.sha-version{ href: "/#{article.version}/#{article.name}" } Static Version
+    %h2
       %a{href: "/" + article.name}&= article.title
     = markdownEncode(article.markdown)
     %hr{style:"clear:both"}
@@ -29,61 +29,56 @@
       })();
 
 
-#sidebar
-  .aside.author
-    %h4 About the Author
-    %img.headshot{src: gravitar(author.email) }
-    %dl
-      %dt Name:
-      %dd&= author.name
-    :if author.github
-      %dl
-        %dt Github:
-        %dd= github(author.github)
-    :if author.bitbucket
-      %dl
-        %dt BitBucket:
-        %dd= bitbucket(author.bitbucket)
-    :if author.twitter
-      %dl
-        %dt Twitter:
-        %dd= twitter(author.twitter)
-    :if author.location
-      %dl
-        %dt Location:
-        %dd&= author.location
-    :if author.homepage
-      %dl
-        %dt Links:
-        %dd
-          %a{href: author.homepage} Homepage
+%section#sidebar.span3
+  / .aside.author
+  /   %h4 About the Author
+  /   %img.headshot{src: gravitar(author.email) }
+  /   %dl
+  /     %dt Name:
+  /     %dd&= author.name
+  /   :if author.github
+  /     %dl
+  /       %dt Github:
+  /       %dd= github(author.github)
+  /   :if author.bitbucket
+  /     %dl
+  /       %dt BitBucket:
+  /       %dd= bitbucket(author.bitbucket)
+  /   :if author.twitter
+  /     %dl
+  /       %dt Twitter:
+  /       %dd= twitter(author.twitter)
+  /   :if author.location
+  /     %dl
+  /       %dt Location:
+  /       %dd&= author.location
+  /   :if author.homepage
+  /     %dl
+  /       %dt Links:
+  /       %dd
+  /         %a{href: author.homepage} Homepage
 
-  .aside
-    %h4
-      About this Article
-    %a.twitter-share-button{href:"http://twitter.com/share",data-count:"horizontal",data-via:"creationix"}
+  .well
+    %h3
+      À propos de cet article
+    %a.twitter-share-button{href:"https://twitter.com/share"}
       Tweet
-    %script{src:"http://platform.twitter.com/widgets.js"}
+    %script
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    
     :if article.date
       %dl{title: article.date}
         %dt
-          Date Released:
+          Date de publication :
         %dd
           &= formatDate(article.date, "%A, %B %e, %Y")
+
     :if article.lastUpdated
       %dl{title: article.lastUpdated}
         %dt
-          Last Updated:
+          Dernière mise à jour :
         %dd
           &= formatDate(article.lastUpdated, "%A, %B %e, %Y")
-
-    :if article.node
-      %dl
-        %dt
-          Node Version:
-        %dd
-          %a{ href: "http://github.com/joyent/node/tree/" + article.node }
-            node #{article.node}
 
     :if article.dependencies
       %dl
@@ -96,36 +91,30 @@
                 %a{ href: "http://github.com/creationix/haml-js/tree/8ea2df3a90ff488ed253d5872e0f4a387f393e5d" }
                   haml-js v0.2.2
 
-    :if article.uniqueSnippets
-      %dl
-        %dt
-          Code Samples:
-        %dd
-          %ul
-            :each base, snippet in article.uniqueSnippets
-              %li
-                %a{ href: snippet.filename}
-                  &= base
+    %ul.nav.nav-list
+      %li.nav-header
+        Versions de l'article :
+      :each version, stat in article.log
+        %li{title: stat.message}
+          %a{ href: "/#{version}/#{article.name}" }
+            &= new Date(stat.date).toUTCString()
 
-    %dl
-      %dt
-        Revisions:
-      %dd
-        %ul
-          :each version, stat in article.log
-            %li{title: stat.message}
-              %a{ href: "/#{version}/#{article.name}" }
-                &= new Date(stat.date).toUTCString()
+    :if article.uniqueSnippets
+      %ul.nav.nav-list
+        %li.nav-header
+          Codes associés :
+        :each base, snippet in article.uniqueSnippets
+          %li
+            %a{ href: snippet.filename}
+              &= base
 
   :if article.related && article.related.length > 0
-    .bubble
-      %h4
-        Other Articles by this Author
-      %ul
-        :each related in article.related
-          %li
-            %a{href: "/" + related.name}&=related.title
-            :if related.node
-              %span.versiontag&= related.node
-
-  .bubble= markdownEncode(description)
+    .well
+      %ul.nav.nav-list
+        %li.nav-header
+          Derniers articles :
+      :each related in article.related
+        %li
+          %a{href: "/" + related.name}&=related.title
+          :if related.node
+            %span.versiontag&= related.node

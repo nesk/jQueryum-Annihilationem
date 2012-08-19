@@ -1,0 +1,102 @@
+@font-face {
+	font-family: 'Canadian Penguin';
+	src: url('/canadian-penguin.ttf');
+}
+
+.offset1 { /* Bootstrap fix on fluid designs */
+    margin-left: 100px !important;
+}
+
+body {
+	padding: 40px 0;
+	background: url('/img/light-wool.png');
+}
+
+h1 {
+	margin: 30px;
+	font-family: 'Canadian Penguin';
+	font-size: 4em;
+}
+
+h1 a, h1 a:hover {
+	color: #555;
+	text-decoration: none;
+}
+
+#articles hr:last-of-type {
+	display: none;
+}
+
+article h2, article .buttons {
+	margin: 10px 0;
+}
+
+article h2 small {
+	font-size: 0.6em;
+}
+
+article p, #about {
+	text-align: justify;
+}
+
+.snippet {
+	position: relative;
+}
+
+.snippet:hover .snippet-link{
+	opacity: 0;
+}
+
+.snippet-link {
+	padding: 10px;
+	position: absolute;
+	top: 0; right: 0;
+	background-color: rgba(245, 245, 245, 0.9);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+
+	-webkit-transition: opacity 200ms linear;
+	-moz-transition: opacity 200ms linear;
+	transition: opacity 200ms linear;
+}
+
+pre, code {
+	font-size: 11px !important;
+}
+
+pre {
+	padding: 10px !important;
+	border: 0 !important;
+	white-space: nowrap !important;
+	overflow: scroll !important;
+}
+
+#sidebar h3 {
+	margin-bottom: 10px;
+}
+
+#sidebar .nav-list {
+	margin-bottom: 15px;
+}
+
+#sidebar .nav-list .nav-header {
+	padding-left: 0 !important;
+	font-size: 15px !important;
+	font-weight: bold !important;
+	color: #555 !important;
+}
+
+#sidebar .nav-list li {
+	max-height: 24px;
+	overflow: hidden;
+	word-wrap: break-word;
+}
+
+#sidebar .about p {
+	margin: 10px 0 0 0;
+}
+
+footer {
+	padding-left: 10px;
+}
