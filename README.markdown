@@ -25,10 +25,11 @@ After that, you can update and start the server :
 
 ## Personalization
 
-The personalization is in two steps :
+The personalization is in three steps :
 
 * Modify the `description.markdown` file which provides a description for the blog.
 * Create your own author file. See [howtonode.org][]’s repository to learn the format to use.
+* Edit the `skin/article.haml` file to assign your own Disqus account.
 
 [howtonode.org]: https://github.com/creationix/howtonode.org
 [Tim Caswell]: https://github.com/creationix
