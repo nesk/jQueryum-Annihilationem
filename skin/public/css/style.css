@@ -10,12 +10,19 @@
 body {
 	padding: 40px 0;
 	background: url('/img/light-wool.png');
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	line-height: 18px;
+}
+
+.btn{
+	padding: 3px 10px 2px;
 }
 
 h1 {
 	margin: 30px;
 	font-family: 'Canadian Penguin';
-	font-size: 4em;
+	font-size: 4.5em;
 }
 
 h1 a, h1 a:hover {
