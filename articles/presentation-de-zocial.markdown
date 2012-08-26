@@ -50,7 +50,7 @@ Plutôt que de me baser sur ce que j’avais déjà écrit pour le prototype, j�
 * [Express][] pour gérer les routes du site web ainsi que la configuration des environnements de développement.
 * [Jade][] pour générer les pages HTML du site web mais aussi celle du client.
 * [Socket.io][] pour gérer les communications entre client et serveur.
-* [DB MySQL][] (du projet [NodeJSBD][]) pour interagir avec la base de données (qui contiendra les comptes utilisateurs ainsi que l’historique des conversations).
+* [DB MySQL][] (du projet [NodeJSDB](http://nodejsdb.org) ) pour interagir avec la base de données (qui contiendra les comptes utilisateurs ainsi que l’historique des conversations).
 * [UglifyJS][] pour réduire les scripts JS fournis dans le userscript.
 * [HTML Minifier][] : utilisé pour minifier les codes HTML contenus dans le userscript (cela dit il n’est pas certain que ça me serve, Jade semble minifier tout seul les rendus qu’il produit).
 
