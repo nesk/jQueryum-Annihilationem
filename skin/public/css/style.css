@@ -23,6 +23,7 @@ body {
 
 .btn{
 	padding: 3px 10px 2px;
+	font-size: 14px;
 }
 
 h1 {
@@ -50,6 +51,11 @@ article h2 small {
 
 article p, #about {
 	text-align: justify;
+}
+
+article .iframe-centered {
+	margin: 20px 0;
+	text-align: center;
 }
 
 .snippet {
@@ -101,6 +107,8 @@ pre {
 }
 
 #sidebar .nav-list li {
+	padding-left: 5px;
+	padding-right: 5px;
 	max-height: 24px;
 	overflow: hidden;
 	word-wrap: break-word;
