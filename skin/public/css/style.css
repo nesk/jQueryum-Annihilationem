@@ -88,7 +88,7 @@ pre {
 	padding: 10px !important;
 	border: 0 !important;
 	white-space: nowrap !important;
-	overflow: scroll !important;
+	overflow: auto !important;
 }
 
 #sidebar h3 {
