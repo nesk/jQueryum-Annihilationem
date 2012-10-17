@@ -82,6 +82,7 @@ article .iframe-centered {
 
 pre, code {
 	font-size: 11px !important;
+	white-space: nowrap;
 }
 
 pre {
