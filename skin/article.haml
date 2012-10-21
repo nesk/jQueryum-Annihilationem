@@ -49,14 +49,6 @@
                 %a{ href: "http://github.com/creationix/haml-js/tree/8ea2df3a90ff488ed253d5872e0f4a387f393e5d" }
                   haml-js v0.2.2
 
-    %ul.nav.nav-list
-      %li.nav-header
-        Versions de l'article :
-      :each version, stat in article.log
-        %li
-          %a{ href: "/#{version}/#{article.name}" }
-            &= new Date(stat.date).toUTCString()
-
     :if article.uniqueSnippets
       %ul.nav.nav-list
         %li.nav-header
